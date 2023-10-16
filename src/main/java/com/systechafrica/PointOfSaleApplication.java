@@ -1,5 +1,7 @@
 package com.systechafrica;
 
+import com.systechafrica.service.PosService;
+import com.systechafrica.service.impl.PosServiceImpl;
 import com.systechafrica.util.CustomFormatter;
 import java.io.IOException;
 import java.util.logging.FileHandler;
@@ -25,6 +27,9 @@ public class PointOfSaleApplication {
 
     public static void main(String[] args) throws IOException {
         initializeLogger();
+        PosService posService = new PosServiceImpl();
+        posService.startApplication(LOGGER);
+
 
     }
 
